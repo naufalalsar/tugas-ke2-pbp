@@ -2,6 +2,8 @@
 
 ## Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html
 
+![bagan django](https://user-images.githubusercontent.com/88728529/189529895-82dcd43c-34c8-4bda-905c-4d661211a01b.png)
+
 urls.py berguna untuk melakukan routing terhadap url dengan views.py yang bersesuaian yang dimana urls.py akan memanggil views.py. views.py berguna untuk menerima request http dan mengembalikan respons http seperti HTML. Berkas HTML berguna untuk menampilkan aplikasi yang diinginkan pada web browser. models.py berguna untuk membuat struktur data yang akan digunakan untuk website yang ingin dibuat dan models.py juga berguna untuk membaca database.
 
 Oleh karena itu dari bagan tersebut user akan membuka project django dimana project django itu akan mengirimkan data ke urls.py yang dimana urls.py akan menentukan views.py mana yang akan digunakan setelah itu views.py tersebut akan mengambil data dari models.py yang dimana model tersebut yang akan memberitahu views.py struktur data apa yang dipakai di database dan setelah itu views.py akan mengambil data dari HTML yang dimana dengan menggabungkan HTML dan models.py maka data dari database dapat ditampilkan dalam bentuk HTML yang disusun oleh views setelah itu views akan mengirimkan HTML yang sudah terisi data dari database dengan menggunakan models.py dan yang terakhir views.py mengirimkan berkas HTML tersebut ke project django dan setelah itu project django tersebut mengirimkan berkas HTML ke pengguna.
