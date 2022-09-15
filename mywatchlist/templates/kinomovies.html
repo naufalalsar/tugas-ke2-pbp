@@ -13,8 +13,8 @@
   <h5>Message for you!</h5>
   <p>{{message}}</p>
 
-    {% for movie in katalog %}
-    <ol>
+    {% for movie in watchlist %}
+    <ul>
         <li>{{movie.title}}</li>
           <p>Watched : {{movie.watched}} 
             <br> 
@@ -26,7 +26,7 @@
             <br>
             {{movie.review}}
         </p>
-      </ol>  
+      </ul>  
       
     {% endfor %}
 
