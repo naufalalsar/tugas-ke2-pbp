@@ -8,7 +8,7 @@ def show_html(request):
 
     yes = 0
     no = 0
-
+    
     for movie in watchlist:
         if(movie.watched == "Yes"):
             yes+=1
