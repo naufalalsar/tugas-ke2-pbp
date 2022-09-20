@@ -129,7 +129,7 @@ HTML :
     return render(request, "kinomovies.html", context)
     ```
 
-    Code diatas adalah code yang saya digunakan untuk menampilkan data HTML-nya. watchlist berguna untuk mengambil data dari database sedangkan yes dan no digunakan untuk tau message apa yang akan ditampilkan. Setelah itu saya merender dengan file HTML yang bernama kinomovies.html yang dimana disana sudah saya definisikan akan ditampilkan kemana data yang berada di variabel context dari fungsi show_html(request). Nama berguna untuk mendefiniskan nama saya, NPM berguna untuk mendefinisikan NPM saya sedangkan message berguna untuk menampilkan message apa yang sesuai dengan banyaknya movie yang ditonton.
+Code diatas adalah code yang saya digunakan untuk menampilkan data HTML-nya. watchlist berguna untuk mengambil data dari database sedangkan yes dan no digunakan untuk tau message apa yang akan ditampilkan. Setelah itu saya merender dengan file HTML yang bernama kinomovies.html yang dimana disana sudah saya definisikan akan ditampilkan kemana data yang berada di variabel context dari fungsi show_html(request). Nama berguna untuk mendefiniskan nama saya, NPM berguna untuk mendefinisikan NPM saya sedangkan message berguna untuk menampilkan message apa yang sesuai dengan banyaknya movie yang ditonton.
 
 JSON :
 
@@ -141,7 +141,7 @@ JSON :
         return HttpResponse(serializers.serialize("json", data), content_type="application/json")
     ```
 
-    Code diatas berguna untuk mengirimkan data dengan tipe JSON. variabel data berguna untuk mengeload data dari database dan returnnya akan mereturn data dengan tipe JSON dengan mengserialize data menjadi JSON.
+Code diatas berguna untuk mengirimkan data dengan tipe JSON. variabel data berguna untuk mengeload data dari database dan returnnya akan mereturn data dengan tipe JSON dengan mengserialize data menjadi JSON.
 
 XML :
 
@@ -153,7 +153,7 @@ XML :
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
     ```
 
-    Code diatas berguna untuk mengirimkan data dengan tipe XML. variabel data berguna untuk mengeload data dari database dan returnnya akan mereturn data dengan tipe XML dengan mengserialize data menjadi XML.
+Code diatas berguna untuk mengirimkan data dengan tipe XML. variabel data berguna untuk mengeload data dari database dan returnnya akan mereturn data dengan tipe XML dengan mengserialize data menjadi XML.
 
 ### Membuat routing sehingga data di atas dapat diakses melalui URL
 
