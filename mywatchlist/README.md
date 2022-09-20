@@ -173,10 +173,20 @@ Yang dimana code tersebut berguna untuk melakukan hubungan urls yang dimasukan d
 
 Karena repositori yang saya pakai adalah repositori tugas 2 pbp kemarin, deployment saya sudah otomatis dilakukan kecuali terdapat error yang dimana saat saya deploy tadi tidak terjadi error apapun. Sehingga, deployment saya lancar.
 
+## Postman Screenshot
+
+HTML :
+
+![html postman](https://user-images.githubusercontent.com/88728529/191292088-c9614f37-21df-422c-a0ad-186df8cf8fb1.png)
+
+JSON :
+
+![json postman](https://user-images.githubusercontent.com/88728529/191292163-d2a2a948-374b-4d6a-be15-76df3091b3c4.png)
 
 
+XML :
 
-
+![xml postman](https://user-images.githubusercontent.com/88728529/191292240-b6eaed4a-0c89-4715-8bfc-2717fc07f3b5.png)
 
 
 
