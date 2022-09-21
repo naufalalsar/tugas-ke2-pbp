@@ -5,14 +5,14 @@ class CatalogItemTestCase(TestCase):
 
     fixtures = ['initial_catalog_data.json']
 
-    def modelCreated(self):
+    def test_modelCreated(self):
         catalog = CatalogItem.objects.all()
         size = 0
         for item in catalog :
             size+=1
         self.assertTrue(size >= 1)
 
-    def modelHaveTheCorrectTypeAndHaveTheCorrectAttribute(self):
+    def test_modelHaveTheCorrectTypeAndHaveTheCorrectAttribute(self):
         catalog = CatalogItem.objects.all()
         for item in catalog :
             self.assertTrue(isinstance(item.item_name, str))
