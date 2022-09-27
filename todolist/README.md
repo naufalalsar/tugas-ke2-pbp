@@ -1,5 +1,8 @@
 # Muhammad Naufal Zaky Alsar
+
 # 2106752041
+
+# https://tugas2pbp.herokuapp.com/todolist/login/
 
 ## Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 
@@ -39,6 +42,8 @@ Bisa saja, tanpa menggunakan generator {{form.as_table}} bearti kita membuat for
 Dapat dilihat bahwa kita harus menulis semuanya secara manual dengan menggunakan bracket table dan isinya menggunakan tr dan td dan harus juga mendefinisikan atributnya
 
 ##  Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML
+
+![form_handling_-_standard](https://user-images.githubusercontent.com/88728529/192574062-a13f6123-1a32-4fe8-ae28-890032f0f634.png)
 
 Pertama yang dilakukan adalah melakukan page request terlebih dahulu ke user dan jika ini adalah request pertama user maka form akan dibuat kosong atau dalam default valuenya dan dikirim ke user. Jika user sudah mengisi form maka akan melakukan page request lagi tetapi sudah bukan pertama kalinya user memasuki data sehingga akan lanjut ke validate data jika data tidak valid maka pesan error akan muncul dan membuat user disuruh mengisi form lagi jika data sudah valid maka akan lanjut melakukan aksi dengan menyimpan data tersebut ke database dan setelah itu akan di proses oleh database dan di tampilkan ke user.
 
