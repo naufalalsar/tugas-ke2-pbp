@@ -43,8 +43,8 @@ def hapus(request, pk):
 
 def tambahin(request):
     context = {}
-    if request.method == "GET":
-        temp = ToDoList(user=request.user, title=request.GET.get('todo'), description=request.GET.get('description'))
+    if request.method == "POST":
+        temp = ToDoList(user=request.user, title=request.POST.get('todo'), description=request.POST.get('description'))
         temp.save()
         return redirect('todolist:show')
     return render(request, "create-task.html",context)
