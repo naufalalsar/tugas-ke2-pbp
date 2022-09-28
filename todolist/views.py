@@ -25,6 +25,8 @@ def show(request):
         }
     return render(request, "todolist.html", context)
 
+
+@login_required(login_url='/todolist/login/')
 def checklist(request, pk):
 
     temp = ToDoList.objects.get(id=pk)
@@ -36,11 +38,15 @@ def checklist(request, pk):
 
     return redirect('todolist:show')
 
+
+@login_required(login_url='/todolist/login/')
 def hapus(request, pk):
     item = ToDoList.objects.filter(pk=pk)
     item.delete()
     return redirect('todolist:show')
 
+
+@login_required(login_url='/todolist/login/')
 def tambahin(request):
     context = {}
     if request.method == "POST":
