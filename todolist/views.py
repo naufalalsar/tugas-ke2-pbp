@@ -18,10 +18,14 @@ from todolist.models import ToDoList
 @login_required(login_url='/todolist/login/')
 def show(request):
     data_todolist = ToDoList.objects.filter(user=request.user)
+    jumlahToDo = 0
+    for i in data_todolist:
+        jumlahToDo+=1
+
     context = {
         'list_todo': data_todolist,
         'nama': request.user.username,
-        'last_login': request.COOKIES['last_login'],
+        'jumlah': jumlahToDo,
         }
     return render(request, "todolist.html", context)
 

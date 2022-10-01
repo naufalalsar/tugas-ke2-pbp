@@ -4,9 +4,14 @@
 <title>Login</title>
 {% endblock meta %}
 
+
 {% block content %}
 
-<div class = "login">
+
+{% comment %} 
+<div class = "login bg-dark justify-content-center" style="height: 100vh; margin: 0;">
+
+    <title>Login</title>
 
     <h1>Login</h1>
 
@@ -15,7 +20,7 @@
         <table>
             <tr>
                 <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                <td><input type="text" name="username" placeholder="Username." class="form-control"></td>
             </tr>
                     
             <tr>
@@ -40,6 +45,49 @@
         
     Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
 
+</div>
+{% endcomment %} 
+
+<div class = "login bg-dark justify-content-center" style="height: 100vh; margin: 0;">
+<br></br>
+<div class="mx-3 d-flex flex-row flex-wrap justify-content-center">
+<div class="card mx-auto" style="width: 22rem;">
+    <div class="card-body mx-auto">
+      <h1 class="card-title"><strong>LOGIN</strong></h1>
+    </div>
+    <div class="card-body">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+                    <a class="text-decoration-none text-dark">Username</a>
+                    <input type="text" name="username" placeholder="Username." class="form-control">
+                
+                        
+                    <a class="text-decoration-none text-dark">Password</a>
+                    <input type="password" name="password" placeholder="Password." class="form-control">
+
+                    <div class="div d-flex justify-content-center mt-3">
+                    <input class="btn btn-primary" type="submit" value="Login">
+                    </div>
+            
+        </form>
+    </div>
+
+    {% if messages %}
+    <div class="card-text mx-auto">
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{message}}
+          </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="card-body mx-auto">
+        <button class="btn btn-dark" type="button"><a href="{% url 'todolist:register' %}" class="text-decoration-none text-light">Create Account</a></button>
+    </div>
+  </div>
+</div>
 </div>
 
 {% endblock content %}

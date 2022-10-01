@@ -7,7 +7,7 @@
 
 {% block content %}  
 
-
+{% comment %}
 <form method="POST" action="">
 
     {% csrf_token %}
@@ -15,12 +15,12 @@
     <table>
         <tr>
             <td>To do: </td>
-            <td><input type="text" name="todo" placeholder="TO DO" class="form-control"></td>
+            <td><input type="text" name="todo" placeholder="Title." class="form-control"></td>
         </tr>
                 
         <tr>
             <td>Description: </td>
-            <td><input type="text" name="description" placeholder="DESCRIPTION" class="form-control"></td>
+            <td><input type="text" name="description" placeholder="Description." class="form-control"></td>
         </tr>
 
         <tr>
@@ -30,6 +30,36 @@
     </table>
         
 </form>
+{% endcomment %}
+
+<div class = "login bg-dark justify-content-center" style="height: 100vh; margin: 0;">
+    <br></br>
+    <div class="mx-3 d-flex flex-row flex-wrap justify-content-center">
+    <div class="card mx-auto" style="width: 22rem;">
+        <div class="card-body mx-auto">
+          <h1 class="card-title"><strong>CREATE TASK</strong></h1>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+    
+                        <a class="text-decoration-none text-dark">Title</a>
+                        <input type="text" name="todo" placeholder="Title." class="form-control">
+                    
+                            
+                        <a class="text-decoration-none text-dark">Description</a>
+                        <input type="text" name="description" placeholder="Description." class="form-control">
+    
+                        <div class="div d-flex justify-content-center mt-3">
+                        <input class="btn btn-success" type="submit" value="Create">
+                        </div>
+                
+            </form>
+        </div>
+    
+      </div>
+    </div>
+    </div>
 
 
 

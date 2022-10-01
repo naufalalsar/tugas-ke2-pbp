@@ -1,11 +1,38 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+<title>To Do List</title>
+{% endblock meta %}
+
 {% block content %}
+
+{% load static %}  
 
 {% csrf_token %}
 
-<h5>Nama: </h5>
-<p>{{nama}}</p>
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav mx-3">
+            <li class="navbar-brand">
+                <a class="nav-link text-light">Hi, {{nama}}</a>
+            </li>
+                <button class="btn btn-light mx-1" type="button"><a href="{% url 'todolist:create-task' %}" class="text-decoration-none text-dark">Create Task</a></button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mr-auto">
+        <ul class="navbar-nav mx-3">
+            <li class="navbar-brand">
+            <button class="btn btn-light float-right" type="button"><a href="{% url 'todolist:logout' %}" class="text-decoration-none text-dark">Logout</a></button>
+            </li>
+    </div>
+</nav>
+
+
+<br></br>
+
+{% comment %} 
 
 <table>
     <tr>
@@ -16,7 +43,7 @@
     <th>Mengubah Status To Do</th>
     <th>Hapus</th>
     </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+
     {% for todolist in list_todo %}
     <tr>
         <th>{{todolist.title}}</th>
@@ -34,10 +61,41 @@
 {% endfor %}
 </table>
 
+{% endcomment %}
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<div class="mx-3 d-flex flex-row flex-wrap justify-content-center">
+    {% for todolist in list_todo %}
+<div class="card m-2" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{todolist.title}}</h5>
+      <p class="card-text">{{todolist.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{todolist.date}}</li>
+      {% if todolist.is_finished == False %}
+      <li class="list-group-item">Belum Selesai</li>
+      {% else %}
+      <li class="list-group-item">Selesai</li>
+      {% endif %}
+    </ul>
+    <div class="card-body">
+        <button class="btn btn-dark" type="button"><a href="{% url 'todolist:checklist' todolist.pk %}" class="text-decoration-none text-light">Selesai?</a></button>
+        <button class="btn btn-dark" type="button"><a href="{% url 'todolist:hapus' todolist.pk %}" class="text-decoration-none text-light">Hapus</a></button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+  
+  <br></br>
+
+
+
+  <br></br>
+
+<nav class="navbar fixed-bottom navbar-light bg-dark">
+    <a class="text-decoration-none text-light">Kamu ada {{ jumlah }} task :D</a>
+  </nav>
+
 
 
 {% endblock content %}
