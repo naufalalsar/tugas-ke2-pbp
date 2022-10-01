@@ -64,6 +64,12 @@
 {% endcomment %}
 
 <div class="mx-3 d-flex flex-row flex-wrap justify-content-center">
+    {% if jumlah == 0 %}
+    <div class="alert alert-info" role="alert">
+        Kamu tidak memiliki task saat ini.
+      </div>
+    {% endif %}
+    
     {% for todolist in list_todo %}
 <div class="card m-2" style="width: 18rem;">
     <div class="card-body">
