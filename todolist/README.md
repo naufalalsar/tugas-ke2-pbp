@@ -4,6 +4,32 @@
 
 # https://tugas2pbp.herokuapp.com/todolist/login/
 
+## Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+
+1. Internal CSS
+Kode CSS ditaruh pada di file HTMLnya. Kelebihannya adalah perubahan hanya terjadi pada satu halaman, Kekurangannya adalah perubahan hanya terjadi pada satu halaman
+
+2. External CSS
+Kode CSS ditaruh pada folder yang lain. Kelebihannya adalah html akan terlihat lebih rapih. Kekurangannya halaman belum tampil secara sempurna hingga file CSS selesai dipanggil
+
+3. Inline CSS
+Kode CSS ditaruh pada line yang diinginkan. Kelebihannya adalah hanya satu elemen yang terkena dampaknya. Kekurangannya adalah hanya satu elemen yang dapat terkena dampaknya.
+
+## Jelaskan tag HTML5 yang kamu ketahui.
+
+Video, tag HTML5 video dapat menampilkan video.
+Audio, tag HTML5 audio dapat menampilkan audio.
+Drag and Drop, seperti mendrop file pada suatu submisi (seperti di scele)
+
+## Jelaskan tipe-tipe CSS selector yang kamu ketahui
+
+class yang akan memilih class
+element yang akan memilih element
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas
+
+Saya menggunakan fitur-fitur bootstrap untuk membuat aplikasi saya, seperti cards, button, dan warna-warnanya. Dan juga style css sedikit.
+
 ## Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 
 Kegunaan CSRF token adalah untuk menghindari dari serangan siber. CSRF token bekerja dengan server mengirim token CSRF ke user dan mengcrosscheck dengan token user, jika user tidak mempunyai token atau tokennya tidak sama dengan yang ada server maka requestnya tidak akan di eksekusi. Jika CSRF token tidak ada di form maka input yang dikirim oleh user tidak akan di crosscheck dengan server sehingga tidak aman. CSRF tidak harus dipakai contohnya untuk method GET karena method GET didesain untuk data yang didesain untuk publik. Tetapi, jika method POST tidak dipakai dengan CSRF token maka akan tertimbul error karena method POST dipakai untuk data-data yang perlu diamankan sehingga perlu untuk dipakaikan CSRF token.
