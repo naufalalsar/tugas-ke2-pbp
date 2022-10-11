@@ -6,6 +6,7 @@ from todolist.views import tambahin
 from todolist.views import show
 from todolist.views import checklist
 from todolist.views import hapus
+from todolist.views import show_json
 
 app_name = 'todolist'
 
@@ -17,4 +18,5 @@ urlpatterns = [
     path('', show, name='show'),
     path('checklist/<int:pk>/', checklist, name='checklist'),
     path('hapus/<int:pk>/', hapus, name='hapus'),
+    path('json/', show_json, name='show_json'),
 ]
