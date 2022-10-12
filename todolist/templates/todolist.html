@@ -44,12 +44,11 @@
                 <a class="text-decoration-none text-dark">Title</a>
                 <input type="text" id="todo" name="todo" placeholder="Title." class="form-control">
             
-                    
                 <a class="text-decoration-none text-dark">Description</a>
                 <input type="text" id="description" name="description" placeholder="Description." class="form-control">
 
                 <div class="div d-flex justify-content-center mt-3">
-                <button class="btn btn-success"  onclick="update()">Create</button>
+                <button class="btn btn-success" data-bs-dismiss="modal" onclick="update()">Create</button>
                 </div>
               </div>
         </div>
@@ -133,7 +132,7 @@
   
   function update(){
         $.ajax({
-          url: "/todolist/",
+          url: "/todolist/add/",
           method: "POST",
           headers: {
             "X-CSRFToken": getCookie("csrftoken")
@@ -151,21 +150,23 @@
       })}
   
     function show() {
-      
       $.get("/todolist/json", function(data) {
         $("#card").html("")
             for(let i = 0; i < data.length ; i++){
               let d = new Date(data[i].fields.date.substring(0,10));
-             const date = d.toDateString() + ", " + data[i].fields.date.substring(11, 19)
+             const date = d.toDateString()
                     $("#card").append(`<div class="card m-2" style="width: 18rem;">
-        <div class="card-body" id="title">
+        <div class="card-header" id="title">
         <h5 class="card-title">${data[i].fields.title}</h5>
-        <p class="card-text">${data[i].fields.description}</p>
+        </div>
+        <div class="card-body" id="title">
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">${date}</li>
+        <li class="list-group-item">${data[i].fields.description}</li>
+        <li class="list-group-item">Tanggal : ${date}</li>
         </ul>
+        </div>
         <div class="card-body">
-                <a class="btn btn-outline-danger mx-1 my-1" id="delete" onclick="deleteTask(${data[i].pk})">Delete</a>
+                <a class="btn btn-outline-danger" id="delete" onclick="deleteTask(${data[i].pk})">Delete</a>
             </div>`)
               }
           });
@@ -174,8 +175,8 @@
           show();
       });
 
-      const deleteTask = (pk) => {
-    $.ajax({
+    function deleteTask(pk) {
+      $.ajax({
         url: `/todolist/hapus/${pk}/`,
         type: "DELETE",
         headers: {
@@ -183,7 +184,7 @@
           },
         success: function(){
           show();
-        },
+        }, 
     })
 }
   

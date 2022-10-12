@@ -25,7 +25,6 @@ def show(request):
         temp.save()
         return JsonResponse({'message': 'success'})
 
-
     context = {
         'list_todo': data_todolist,
         'nama': request.user.username,
@@ -60,7 +59,7 @@ def tambahin(request):
         temp = ToDoList(user=request.user, title=request.POST.get('todo'), description=request.POST.get('description'))
         temp.save()
         return redirect('todolist:show')
-    return render(request, "create-task.html",context)
+    return JsonResponse({'message': 'success'})
 
 def register(request):
     form = UserCreationForm()
